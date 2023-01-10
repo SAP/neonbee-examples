@@ -1,0 +1,5 @@
+/build/
+/.gradle/
+/working_dir/
+/.idea/
+/bin/

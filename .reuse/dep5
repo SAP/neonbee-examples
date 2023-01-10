@@ -24,14 +24,29 @@ Disclaimer: The code in this project may include calls to APIs ("API Calls") of
  you any rights to use or access any SAP External Product, or provide any third
  parties the right to use of access any SAP External Product, through API Calls.
 
-Files: <YOUR-FILE-OR-FOLDER-LIST>
-Copyright:  <YEARS-RELEVANT-FOR-YOUR-PROJECT> SAP SE or an SAP affiliate company and <YOUR-PROJECT-NAME> contributors
+#### neonbee-kickstart-guide
+Files: neonbee-kickstart-guide/src/* neonbee-kickstart-guide/models/*
+Copyright: 2019 SAP SE or an SAP affiliate company and NeonBee contributors
+License: EPL-2.0
+
+Files: neonbee-kickstart-guide/*.md neonbee-kickstart-guide/*.gradle
+Copyright: 2019 SAP SE or an SAP affiliate company and NeonBee contributors
+License: EPL-2.0
+
+Files: neonbee-kickstart-guide/gradle/*
+Copyright: 2019 SAP SE or an SAP affiliate company and NeonBee contributors
+License: EPL-2.0
+
+#### NeonBee-Examples
+Files: README.md CONTRIBUTING.md
+Copyright: 2019 SAP SE or an SAP affiliate company and NeonBee contributors
+License: EPL-2.0
+
+#### Tools
+Files: */gradle/wrapper/*  */gradlew  */gradlew.bat
+Copyright: Gradle Inc. 2020
 License: Apache-2.0
 
-Files: <THIRD-PARTY-FILE-OR-FOLDER-LIST>
-Copyright: <COPYRIGHT-OF-THIRD-PARTY-CODE>
-License: <LICENSE-OF-THIRD-PARTY-CODE>
-
-Files: <ANOTHER-THIRD-PARTY-FILE-OR-FOLDER-LIST>
-Copyright: <COPYRIGHT-OF-ANOTHER-THIRD-PARTY-CODE>
-License: <LICENSE-OF-ANOTHER- THIRD-PARTY-CODE>
+Files: .gitignore */.gitignore */.idea/*
+Copyright: 2019 SAP SE or an SAP affiliate company and NeonBee contributors
+License: CC0-1.0
