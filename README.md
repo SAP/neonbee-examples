@@ -1,6 +1,6 @@
 # 🐝 NeonBee Examples
 
-[![REUSE status](https://api.reuse.software/badge/github.com/sap/neonbee-examples)](https://api.reuse.software/info/github.com/sap/neonbee)
+[![REUSE status](https://api.reuse.software/badge/github.com/sap/neonbee-examples)](https://api.reuse.software/info/github.com/sap/neonbee-examples)
 
 This repository is a collection of curated examples and guides for [NeonBee](https://github.com/SAP/neonbee).
 
