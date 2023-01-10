@@ -1,0 +1,23 @@
+plugins {
+    id 'io.neonbee.gradle.kickstart.application' version '0.1.3'
+    id "io.neonbee.gradle.kickstart.quality" version "0.1.3"
+}
+
+group 'org.example.neonbee'
+version '1.0-SNAPSHOT'
+
+neonbeeApplication {
+    neonbeeVersion = '0.18.0'  // The NeonBee version
+    workingDir = 'working_dir' // The working directory of NeonBee (Default: working_dir)
+}
+
+test {
+    useJUnitPlatform()
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    models project(path: ':models', configuration: 'models')
+}
