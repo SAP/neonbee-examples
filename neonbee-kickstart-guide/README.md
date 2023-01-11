@@ -9,20 +9,20 @@ This guide is very limited and focused on the absolute basics of *NeonBee*. This
 
 ## Content
 
-- [NeonBee Kickstart Guide](#neonbee-kickstart-guide)
-  - [Content](#content)
-  - [Prerequisite](#prerequisite)
-  - [Set up the project](#set-up-the-project)
-  - [Part 1: The DataVerticle](#part-1-the-dataverticle)
-    - [Test the DataVerticle](#test-the-dataverticle)
-    - [Request Data via RawEndpoint](#request-data-via-rawendpoint)
-  - [Part 2: Require data](#part-2-require-data)
-    - [Test and mock DataVerticles](#test-and-mock-dataverticles)
-  - [Part 3: The EntityVerticle](#part-3-the-entityverticle)
-    - [Add models subproject](#add-models-subproject)
-    - [Define OData model](#define-odata-model)
-    - [Write your first EntityVerticle](#write-your-first-entityverticle)
-    - [Test EntityVerticle and mock DataVerticles](#test-entityverticle-and-mock-dataverticles)
+* [Prerequisite](#prerequisite)
+* [Set up the project](#set-up-the-project)
+* [Part 1: The DataVerticle](#part-1--the-dataverticle)
+  * [Test the DataVerticle](#test-the-dataverticle)
+  * [Request Data via RawEndpoint](#request-data-via-rawendpoint)
+* [Part 2: Require data](#part-2--require-data)
+  * [Test and mock DataVerticles](#test-and-mock-dataverticles)
+* [Part 3: The EntityVerticle](#part-3--the-entityverticle)
+  * [Add models subproject](#add-models-subproject)
+  * [Define OData model](#define-odata-model)
+  * [Write your first EntityVerticle](#write-your-first-entityverticle)
+  * [Test EntityVerticle and mock DataVerticles](#test-entityverticle-and-mock-dataverticles)
+  * [Request OData via ODataEndpoint](#request-odata-via-odataendpoint)
+* [For Your Convenience](#for-your-convenience)
 
 ## Prerequisite
 
@@ -604,4 +604,42 @@ $ curl http://localhost:8080/odata/BeehiveService/Beehives
     }
   ]
 }
+```
+
+## For Your Convenience
+
+NeonBee provides further simplifications when dealing with verticle development.
+
+Especially in large-scale distributed systems, correlating log messages become crucial to reproduce what is actually
+going on. Conveniently, NeonBee offers a simple `LoggingFacade` which masks the logging interface with:
+
+```java
+// alternatively you can use the masqueradeLogger method,
+// to use the facade on an existing SF4J logger
+LoggingFacade logger = LoggingFacade.create();
+
+logger.correlateWith(context).info("Hello NeonBee");
+```
+
+The logger gets correlated with a correlated ID passed through the routing context. In the default implementation of
+NeonBees logging facade, the correlation ID will be logged alongside the actual message as a so-called
+[marker](https://www.slf4j.org/faq.html#marker_interface) and can easily be used to trace a certain log message,
+even in distributed clusters. Note that the `correlateWith` method does not actually correlate the whole logging
+facade, but only the next message logged. This means you have to invoke the `correlateWith` method once again when the
+next message is logged.
+
+Similar to Vert.x's shared instance, NeonBee provides its own shared instance holding some additional properties, such
+as the NeonBee options and configuration objects, as well as general purpose local and cluster-wide shared map for you
+to use. Each NeonBee instance has a one-to-one relation to a given Vert.x instance. To retrieve the NeonBee instance
+from anywhere, just use the static `NeonBee.neonbee` method of the NeonBee main class:
+
+```java
+NeonBee neonbee = NeonBee.neonbee(vertx);
+
+// get access to the NeonBee CLI options
+NeonBeeOptions options = neonbee.getOptions();
+
+// general purpose shared local / async (cluster-wide) maps
+LocalMap<String, Object> sharedLocalMap = neonbee.getLocalMap();
+AsyncMap<String, Object> sharedAsyncMap = neonbee.getAsyncMap();
 ```
