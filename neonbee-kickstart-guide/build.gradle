@@ -1,14 +1,19 @@
 plugins {
-    id 'io.neonbee.gradle.kickstart.application' version '0.1.3'
-    id "io.neonbee.gradle.kickstart.quality" version "0.1.3"
+    id 'io.neonbee.gradle.kickstart.application' version '0.1.4'
+    id "io.neonbee.gradle.kickstart.quality" version "0.1.4"
 }
 
 group 'org.example.neonbee'
 version '1.0-SNAPSHOT'
 
 neonbeeApplication {
-    neonbeeVersion = '0.18.0'  // The NeonBee version
+    neonbeeVersion = '0.34.0'  // The NeonBee version
     workingDir = 'working_dir' // The working directory of NeonBee (Default: working_dir)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 test {

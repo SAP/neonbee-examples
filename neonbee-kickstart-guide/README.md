@@ -26,8 +26,8 @@ This guide is very limited and focused on the absolute basics of *NeonBee*. This
 
 ## Prerequisite
 
-* OpenJDK 11
-* Gradle 7+
+* OpenJDK 21
+* Gradle 8+
 
 ## Set up the project
 
@@ -38,11 +38,11 @@ Before you can start, you need to create an empty Gradle project and apply the *
 
 ```groovy
 plugins {
-    id 'io.neonbee.gradle.kickstart.application' version '0.1.2'
+    id 'io.neonbee.gradle.kickstart.application' version '0.1.4'
 }
 
 neonbeeApplication {
-    neonbeeVersion = '0.18.0'  // The NeonBee version
+    neonbeeVersion = '0.34.0'  // The NeonBee version
     workingDir = 'working_dir' // The working directory of NeonBee (Default: working_dir)
 }
 

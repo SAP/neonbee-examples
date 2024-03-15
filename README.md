@@ -10,8 +10,8 @@ The goals of this repository are:
  * Demonstrate new NeonBee features.
 
 ## Repository Structure
-The examples in this repository are standalone Gradle projects in their own subfolder.
-The name of the related subfolder SHOULD match the project name and conform to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case).
+The examples in this repository are standalone Gradle projects in their own sub folder.
+The name of the related sub folder SHOULD match the project name and conform to [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case).
 
 ## Example Projects
 The following table lists all examples provided by this repository. The table has the following structure:
@@ -20,10 +20,10 @@ The following table lists all examples provided by this repository. The table ha
 * **Responsible:** Every example project SHOULD have an owner who keeps it up to date and ensures that it will continue to work with future NeonBee versions
 * **NeonBee Version:** The latest NeonBee version that the example project is tested against
 * **Last Update:** Date of the last update in format yyyy-MM-dd
-* **Subfolder:** The subfolder that contains the example project
+* **Sub Folder:** The sub folder that contains the example project
 
 
-| Name                                                           | Description                                 | Responsible | NeonBee Version | Last update | Subfolder               |
+| Name                                                           | Description                                 | Responsible | NeonBee Version | Last update | Sub Folder              |
 |----------------------------------------------------------------|---------------------------------------------|-------------|-----------------|-------------|-------------------------|
-| [neonbee-kickstart-guide](./neonbee-kickstart-guide/README.md) | This guide will explain the NeonBee basics. | pk-work     | 0.18.0          | 2022-12-21  | neonbee-kickstart-guide |
+| [neonbee-kickstart-guide](./neonbee-kickstart-guide/README.md) | This guide will explain the NeonBee basics. | pk-work     | 0.34.0          | 2024-03-15  | neonbee-kickstart-guide |
 
